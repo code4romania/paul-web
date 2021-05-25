@@ -65,7 +65,6 @@
           @update="getTableEntries"
           updateQueryNav
           customPerPage
-          fixedHeader
         />
       </template>
     </BaseCard>
