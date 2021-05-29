@@ -3,7 +3,7 @@
     <nav class="navbar">
       <div class="navbar-brand">
         <router-link to="/" class="navbar-item">
-          <h2>PAUL</h2>
+          <Logo />
         </router-link>
       </div>
 
@@ -29,8 +29,13 @@
 </template>
 
 <script>
+import Logo from '@/components/navbar/Logo.vue'
+
 export default {
   name: 'AccountBase',
+  components: {
+    Logo
+  },
   data() {
     return {
       username: '',
