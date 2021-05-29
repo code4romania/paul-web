@@ -1,6 +1,7 @@
 <template>
   <div>
     <b-table
+      ref="table"
       v-if="tableEntries && columns"
       :data="tableEntries.results"
       :loading="loading"
@@ -68,7 +69,7 @@
           </span>
         </div>
 
-        <div class="pagination-jump" v-if="tableEntries.count / perPage > 4 ">
+        <div class="pagination-jump" v-if="tableEntries.count / perPage > 4">
           <div class="control">
             <input
               placeholder="Jump to page"
@@ -149,7 +150,8 @@ export default {
     customPerPage: Boolean,
     updateQueryNav: { type: Boolean, default: false },
     tableActionsComponent: { type: String, default: 'ActionsTable' },
-    fixedHeader: { type: Boolean, default: false }
+    fixedHeader: { type: Boolean, default: false },
+    fullHeight: { type: Boolean, default: false }
   },
   computed: {
     ...mapState('data', {
@@ -187,7 +189,15 @@ export default {
       return fields
     }
   },
-  mounted() {},
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize)
+      this.onResize()
+    })
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize)
+  },
   methods: {
     getValue(row, field, type) {
       const obj = row.data ? row.data : row
@@ -207,6 +217,20 @@ export default {
       }
 
       this.$emit('update', newQuery)
+    },
+    updateTableHeight() {
+      // TODO: Find a way to not require using setTimeout
+      this.fullHeight &&
+        setTimeout(() => {
+          const $tableWrapper = this.$refs.table.$el.querySelector(
+            '.table-wrapper'
+          )
+          const top =
+            window.pageYOffset + $tableWrapper.getBoundingClientRect().top
+          // TODO: Find where 120px is coming from
+          const height = window.innerHeight - top - 120
+          $tableWrapper.setAttribute('style', `height: ${height}px`)
+        }, 500)
     },
     onPageJump(event) {
       let page = parseInt(event.target.value)
@@ -239,6 +263,17 @@ export default {
     },
     onSort(field, order) {
       this.updateQueryRequest({ __order: (order == 'desc' ? '-' : '') + field })
+    },
+    onResize() {
+      this.updateTableHeight()
+    }
+  },
+  watch: {
+    page() {
+      this.updateTableHeight()
+    },
+    perPage() {
+      this.updateTableHeight()
     }
   }
 }

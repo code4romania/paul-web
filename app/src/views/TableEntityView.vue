@@ -23,7 +23,7 @@
           :tableEntries="link.tableEntries || {}"
           tableActionsComponent="ActionsTableEntity"
           @update="getTableEntries(index, $event)"
-          :fixedHeader="link.tableEntries.count > 3"
+          :fixedHeader="link.tableEntries && link.tableEntries.count > 3"
         />
         <template #title v-if="link.tableEntries">
           <span class="entries">
