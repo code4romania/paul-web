@@ -5,6 +5,11 @@
     id="app-container"
   >
     <nav class="navbar">
+      <BaseMenu
+        :isAdmin="user && user.is_admin"
+        v-bind="{ menuActive }"
+        @toggleMenu="menuActive = !menuActive"
+      />
       <div class="navbar-menu">
         <div class="navbar-end">
           <router-link
@@ -30,12 +35,6 @@
       </div>
     </nav>
 
-    <BaseMenu
-      :isAdmin="user && user.is_admin"
-      v-bind="{ menuActive }"
-      @toggleMenu="menuActive = !menuActive"
-    />
-
     <div class="main-view">
       <router-view />
     </div>
@@ -49,7 +48,7 @@ import { mapState } from 'vuex'
 export default {
   name: 'Base',
   components: {
-    BaseMenu,
+    BaseMenu
   },
   data() {
     return {
