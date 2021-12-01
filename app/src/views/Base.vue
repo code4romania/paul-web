@@ -5,13 +5,6 @@
     id="app-container"
   >
     <nav class="navbar">
-      <div class="navbar-brand">
-        <router-link :to="{ name: 'dashboard' }" class="navbar-item">
-          <Logo :isSmall="true" />
-          <h2 v-if="menuActive">PAŪL</h2>
-        </router-link>
-      </div>
-
       <div class="navbar-menu">
         <div class="navbar-end">
           <router-link
@@ -21,7 +14,7 @@
           >
             <figure class="avatar-image image is-pulled-left">
               <img v-if="user.avatar" :src="user.avatar" class="is-rounded" />
-              
+
               <div v-else class="placeholder">
                 <b-icon icon="account" class="is-size-4"></b-icon>
               </div>
@@ -51,14 +44,12 @@
 
 <script>
 import BaseMenu from '@/components/BaseMenu.vue'
-import Logo from '@/components/Logo.vue'
 import { mapState } from 'vuex'
 
 export default {
   name: 'Base',
   components: {
     BaseMenu,
-    Logo
   },
   data() {
     return {

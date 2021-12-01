@@ -1,5 +1,11 @@
 <template>
   <b-menu class="is-size-6" id="base-menu">
+    <router-link :to="{ name: 'dashboard' }" class="menu-logo-container">
+      <Logo
+        :class="menuActive ? 'menu-logo' : 'menu-logo menu-logo-small'"
+        :isSmall="!menuActive"
+      />
+    </router-link>
     <b-menu-list>
       <b-menu-item
         :icon="menuActive ? 'menu-open' : 'menu-icon'"
@@ -72,8 +78,13 @@
 </template>
 
 <script>
+import Logo from '@/components/Logo.vue'
+
 export default {
   name: 'BaseMenu',
+  components: {
+    Logo
+  },
   props: {
     isAdmin: Boolean,
     menuActive: Boolean

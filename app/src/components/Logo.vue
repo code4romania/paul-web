@@ -12,7 +12,7 @@ export default {
   },
   computed: {
     width: function() {
-      return this.isSmall ? '68' : '68'
+      return this.isSmall ? '36' : '150'
     },
     src: function() {
       const file = this.isSmall ? 'logo-small' : 'logo-default';

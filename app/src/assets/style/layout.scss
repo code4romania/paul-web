@@ -63,6 +63,7 @@ nav.navbar {
 
   #base-menu {
     position: fixed;
+    top: 27px;
     width: 264px;
     background-color: $blue;
     font-size: $size-6;
@@ -70,6 +71,20 @@ nav.navbar {
     border-radius: $radius;
     transition: width 0.15s;
     overflow: hidden;
+
+    .menu-logo {
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    .menu-logo-small {
+      padding: 7px;
+    }
+
+    .menu-logo-container {
+      display: flex;
+      justify-content: center;
+    }
 
     .menu-header {
       border-bottom: 1px solid $grey;
