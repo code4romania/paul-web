@@ -44,7 +44,6 @@
 
 <script>
 import BaseMenu from '@/components/BaseMenu.vue'
-import Logo from '@/components/Logo.vue'
 import { mapState } from 'vuex'
 
 export default {
