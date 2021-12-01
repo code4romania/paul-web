@@ -7,15 +7,6 @@ body {
 }
 
 nav.navbar {
-  .navbar-brand {
-    position: fixed;
-
-    h2 {
-      padding-left: 24px;
-      font-weight: $weight-bold;
-    }
-  }
-
   .navbar-item {
     font-size: $size-6;
     line-height: 1;
@@ -72,18 +63,20 @@ nav.navbar {
     transition: width 0.15s;
     overflow: hidden;
 
+    .menu-logo-container {
+      display: flex;
+      justify-content: center;
+    }
+
     .menu-logo {
       background: #fff;
       border-radius: 50%;
+      width: 150px;
     }
 
     .menu-logo-small {
       padding: 7px;
-    }
-
-    .menu-logo-container {
-      display: flex;
-      justify-content: center;
+      width: 36px;
     }
 
     .menu-header {

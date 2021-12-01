@@ -1,23 +1,19 @@
 <template>
-  <img :src="this.src" :width="this.width" />
+  <img :src="logoSrc" />
 </template>
 
 <script>
 export default {
   name: 'Logo',
   props: {
-    isSmall: {
-      type: Boolean
+    src: {
+      type: String
     }
   },
   computed: {
-    width: function() {
-      return this.isSmall ? '36' : '150'
-    },
-    src: function() {
-      const file = this.isSmall ? 'logo-small' : 'logo-default';
+    logoSrc: function() {
       var images = require.context('../assets/img/', false, /\.svg$/)
-      return images('./' + file + '.svg')
+      return images('./' + this.src + '.svg')
     }
   }
 }

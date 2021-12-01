@@ -3,7 +3,7 @@
     <router-link :to="{ name: 'dashboard' }" class="menu-logo-container">
       <Logo
         :class="menuActive ? 'menu-logo' : 'menu-logo menu-logo-small'"
-        :isSmall="!menuActive"
+        :src="menuActive ? 'logo-default' : 'logo-small'"
       />
     </router-link>
     <b-menu-list>
