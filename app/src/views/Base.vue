@@ -7,8 +7,8 @@
     <nav class="navbar">
       <div class="navbar-brand">
         <router-link :to="{ name: 'dashboard' }" class="navbar-item">
+          <Logo :isSmall="true" />
           <h2 v-if="menuActive">PAŪL</h2>
-          <h2 v-else>P</h2>
         </router-link>
       </div>
 
@@ -51,12 +51,14 @@
 
 <script>
 import BaseMenu from '@/components/BaseMenu.vue'
+import Logo from '@/components/Logo.vue'
 import { mapState } from 'vuex'
 
 export default {
   name: 'Base',
   components: {
-    BaseMenu
+    BaseMenu,
+    Logo
   },
   data() {
     return {
