@@ -97,7 +97,6 @@ nav.navbar {
         }
 
         &.is-disabled {
-          opacity: .5;
           cursor: not-allowed;
           color: $grey;
           &:hover {
