@@ -1,5 +1,6 @@
 <template>
   <div>
+    <banner />
     <router-view />
   </div>
 </template>
