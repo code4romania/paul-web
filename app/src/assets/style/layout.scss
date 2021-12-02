@@ -95,6 +95,15 @@ nav.navbar {
             color: $grey-darker;
           }
         }
+
+        &.is-disabled {
+          opacity: .5;
+          cursor: not-allowed;
+          color: $grey;
+          &:hover {
+            color: $grey;
+          }
+        }
       }
 
       span:not(.icon) {

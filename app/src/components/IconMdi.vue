@@ -35,6 +35,7 @@ import SquareEditOutline from 'vue-material-design-icons/SquareEditOutline.vue'
 import TrashCanOutline from 'vue-material-design-icons/TrashCanOutline.vue'
 import Tune from 'vue-material-design-icons/Tune.vue'
 import MonitorScreenshot from 'vue-material-design-icons/MonitorScreenshot.vue'
+import School from 'vue-material-design-icons/School.vue'
 
 export default {
   name: 'IconMdi',
@@ -67,6 +68,7 @@ export default {
     MonitorDashboard,
     Power,
     Refresh,
+    School,
     SquareEditOutline,
     TrashCanOutline,
     Tune,
