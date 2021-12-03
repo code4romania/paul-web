@@ -95,6 +95,14 @@ nav.navbar {
             color: $grey-darker;
           }
         }
+
+        &.is-disabled {
+          cursor: not-allowed;
+          color: $grey;
+          &:hover {
+            color: $grey;
+          }
+        }
       }
 
       span:not(.icon) {

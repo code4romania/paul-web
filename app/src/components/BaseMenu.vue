@@ -73,6 +73,8 @@
         label="Import data"
         :to="{ name: 'table-import', query: { manual: true } }"
       />
+
+      <b-menu-item tag="a" icon="school" label="Tutoriale" disabled />
     </b-menu-list>
   </b-menu>
 </template>
