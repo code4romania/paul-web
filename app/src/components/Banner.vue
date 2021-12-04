@@ -1,12 +1,12 @@
 <template>
-  <div style="background: white; font-size: 10px; padding: 6px 0; color: black">
+  <div style="background: white; font-size: 12px; padding: 6px 0; color: black">
     <div class="container is-fluid">
       <div>
         <img
           src="/img/code4romania.svg"
-          width="64"
+          width="102"
           alt=""
-          style="vertical-align: middle; margin-right: 10px"
+          style="vertical-align: middle; margin-right: 20px"
         />
         <span
           >O soluție
