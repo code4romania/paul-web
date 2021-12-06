@@ -105,6 +105,16 @@
       &:focus {
         border-color: $grey-dark;
       }
+
+      &[disabled] {
+        display: none;
+      }
+    }
+
+    .pagination-list {
+      li:only-child {
+        display: none;
+      }
     }
 
     .input {
