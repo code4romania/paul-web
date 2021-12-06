@@ -1,11 +1,11 @@
 <template>
   <div>
-    <BaseTitle title="Chart management" :hasBackButton="false" />
+    <BaseTitle title="Management grafice" :hasBackButton="false" />
 
-    <BaseCard title="Charts" v-if="charts"
+    <BaseCard title="Grafice" v-if="charts"
       ><template #actions>
         <router-link :to="{ name: 'chart-edit' }" class="button is-primary">
-          Add new chart
+          Adaugă grafic nou
         </router-link>
       </template>
 
@@ -41,25 +41,25 @@ export default {
             name: 'name',
             component: 'FieldRouterLink',
             props: { route: 'chart-view', param: 'idChart' },
-            display_name: 'Chart name'
+            display_name: 'Nume grafic'
           },
           {
             name: 'creation_date',
             field_type: 'date',
-            display_name: 'Creation date'
+            display_name: 'Creat la'
           },
           {
             name: 'table',
-            display_name: 'Table',
+            display_name: 'Date de intrare',
             component: 'FieldTagList'
           },
           {
             name: 'owner.username',
-            display_name: 'Created by'
+            display_name: 'Creat de'
           },
           {
             name: 'show_dashboard',
-            display_name: 'Show in dashboard',
+            display_name: 'Publică în dashboard',
             component: 'FieldCheckbox',
             centered: true,
             sortable: false,

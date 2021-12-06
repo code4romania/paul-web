@@ -1,11 +1,11 @@
 <template>
   <div>
-    <BaseTitle title="Cards management" :hasBackButton="false" />
+    <BaseTitle title="Management carduri" :hasBackButton="false" />
 
-    <BaseCard title="Cards" v-if="cards"
+    <BaseCard title="Carduri" v-if="cards"
       ><template #actions>
         <router-link :to="{ name: 'card-edit' }" class="button is-primary">
-          Add new card
+          Adaugă un card
         </router-link>
       </template>
 
@@ -41,25 +41,25 @@ export default {
             name: 'name',
             component: 'FieldRouterLink',
             props: { route: 'card-view', param: 'idCard' },
-            display_name: 'Card name'
+            display_name: 'Nume card'
           },
           {
             name: 'creation_date',
             field_type: 'date',
-            display_name: 'Creation date'
+            display_name: 'Creat la'
           },
           {
             name: 'table',
-            display_name: 'Table',
+            display_name: 'Date de intrare',
             component: 'FieldTagList'
           },
           {
             name: 'owner.username',
-            display_name: 'Created by'
+            display_name: 'Creat de'
           },
           {
             name: 'show_dashboard',
-            display_name: 'Show in dashboard',
+            display_name: 'Publică în dashboard',
             component: 'FieldCheckbox',
             centered: true,
             sortable: false,

@@ -2,7 +2,7 @@
   <header class="main-header">
     <div class="back-button" v-if="hasBackButton">
       <b-button @click="goBack" iconLeft="arrow-left">
-        Back
+        Înapoi
       </b-button>
     </div>
     <p class="title">{{ title }}</p>

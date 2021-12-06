@@ -107,7 +107,7 @@
 
         <template #footer>
           <b-button class="is-primary" @click="passes(submit)"
-            >Continue</b-button
+            >Continuă</b-button
           >
         </template>
       </BaseCard>
@@ -146,7 +146,7 @@ export default {
     }
   },
   mounted() {
-    this.title = this.idTable ? 'Edit filtered view' : 'Add filtered view'
+    this.title = this.idTable ? 'Editează date procesate' : 'Adaugă date procesate'
 
     this.$store.dispatch('data/getDatabase')
 

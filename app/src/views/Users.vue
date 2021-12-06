@@ -1,8 +1,8 @@
 <template>
   <div>
-    <BaseTitle title="User management" :hasBackButton="false" />
+    <BaseTitle title="Utilizatori" :hasBackButton="false" />
 
-    <BaseCard title="Users on the platform" v-if="users">
+    <BaseCard title="Utilizatorii platformei" v-if="users">
       <template #default>
         <BaseTableAsync
           :table="userTable"
@@ -30,19 +30,19 @@ export default {
             name: 'username',
             component: 'FieldRouterLink',
             props: { route: 'user-profile', param: 'idUser' },
-            display_name: 'Username'
+            display_name: 'Nume de utilizator'
           },
           {
             name: 'first_name',
-            display_name: 'First name'
+            display_name: 'Prenume'
           },
           {
             name: 'last_name',
-            display_name: 'Last name'
+            display_name: 'Nume'
           },
           {
             name: 'email',
-            display_name: 'E-mail address'
+            display_name: 'E-mail'
           }
         ]
       }

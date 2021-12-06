@@ -19,7 +19,7 @@
               params: { idTable: card.config.table }
             }"
           >
-            View data source
+            Vezi sursa de date
           </router-link>
           <router-link
             class="button is-primary"
@@ -28,16 +28,16 @@
               params: { idCard }
             }"
           >
-            Edit card
+            Editează card
           </router-link>
         </div>
       </template>
 
       <template #default>
         <div class="card-container" v-if="table">
-          Last edit: {{ table.last_edit_date | parseDate }}
+          Ultima actualizare: {{ table.last_edit_date | parseDate }}
           <span v-if="table.last_edit_user"
-            >by
+            >de
             {{
               table.last_edit_user.first_name +
                 ' ' +

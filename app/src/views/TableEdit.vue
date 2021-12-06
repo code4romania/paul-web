@@ -67,7 +67,7 @@
                               : ''
                           }`
                         "
-                        dialogMessage="Are you sure?"
+                        dialogMessage="Ești sigur?"
                         :bypassDialog="!idTable"
                         @on-confirm="deleteColumn(index)"
                     /></b-button>
@@ -97,7 +97,7 @@
 
         <template #footer>
           <b-button class="is-primary" @click="passes(submit)">
-            {{ idTable ? 'Save changes' : 'Continue' }}
+            {{ idTable ? 'Salvează modificările' : 'Continuă' }}
           </b-button>
         </template>
       </BaseCard>

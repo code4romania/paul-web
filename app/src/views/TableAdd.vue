@@ -32,7 +32,7 @@
 
         <template #footer>
           <b-button class="is-primary" @click="passes(submit)"
-            >Continue</b-button
+            >Continuă</b-button
           >
         </template>
       </BaseCard>

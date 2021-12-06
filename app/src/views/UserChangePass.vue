@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BaseTitle title="User management" />
+    <BaseTitle title="Utilizatori" />
 
     <ValidationObserver v-slot="{ passes }" tag="form" @submit.prevent>
       <BaseCard title="Change password" v-if="user">

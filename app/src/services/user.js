@@ -84,7 +84,7 @@ const UserService = {
   },
 
   getRights() {
-    return ['No rights', 'Can view', 'Can edit']
+    return ['Fără drepturi', 'Vizualizare', 'Editare']
   }
 }
 

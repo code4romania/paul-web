@@ -1,8 +1,8 @@
 <template>
   <div>
-    <BaseTitle title="User management" />
+    <BaseTitle title="Utilizatori" />
 
-    <BaseCard title="Account settings" v-if="user && activeUser">
+    <BaseCard title="Setări cont" v-if="user && activeUser">
       <template #actions>
         <div class="buttons">
           <router-link
@@ -18,8 +18,8 @@
             type="is-dark"
             @click="toggleUserActive"
           >
-            <span v-if="user.is_active">Deactivate</span>
-            <span v-else>Activate</span>
+            <span v-if="user.is_active">Dezactivează</span>
+            <span v-else>Activează</span>
             user
           </b-button>
         </div>
@@ -49,13 +49,13 @@
 
             <div class="column is-8-widescreen">
               <fieldset>
-                <VField label="User info" grouped>
+                <VField label="Nume și prenume" grouped>
                   <b-input
-                    placeholder="First name"
+                    placeholder="Prenume"
                     v-model="userModel.first_name"
                   />
                   <b-input
-                    placeholder="Last name"
+                    placeholder="Nume"
                     v-model="userModel.last_name"
                   />
                 </VField>
@@ -64,11 +64,11 @@
                   <b-input v-model="userModel.email" />
                 </VField>
 
-                <VField label="Change avatar">
+                <VField label="Schimbă avatar">
                   <div class="file is-right is-dark is-fullwidth">
                     <b-upload v-model="userModel.file" expanded>
                       <span class="file-cta">
-                        <span class="file-label">Browse</span>
+                        <span class="file-label">Caută</span>
                       </span>
                       <span class="file-name">
                         <span v-if="userModel.file">{{
@@ -86,12 +86,12 @@
     </BaseCard>
 
     <BaseCard
-      title="User database access"
+      title="Listă de permisiuni"
       v-if="user && activeUser && activeUser.is_admin && notCurrentUser"
       style="width: 600px;"
     >
       <template #footer>
-        <b-button type="is-primary" @click="save(true)">Save changes</b-button>
+        <b-button type="is-primary" @click="save(true)">Salvează</b-button>
       </template>
       <template #default>
         <b-loading :is-full-page="false" v-model="loading.permissions" />
@@ -174,8 +174,8 @@ export default {
 
     toggleUserActive() {
       this.$buefy.dialog.confirm({
-        title: 'User account status',
-        message: 'Are you sure?',
+        title: 'Status utilizator',
+        message: 'Ești sigur?',
         type: this.user.is_active ? 'is-danger' : 'is-success',
         onConfirm: () => {
           this.loading.profile = true
@@ -190,7 +190,7 @@ export default {
             )
           })
         },
-        confirmText: this.user.is_active ? 'Deactivate' : 'Activate'
+        confirmText: this.user.is_active ? 'Dezactivează' : 'Activează'
       })
     },
 

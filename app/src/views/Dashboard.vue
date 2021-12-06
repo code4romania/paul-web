@@ -16,20 +16,20 @@
       </template>
     </div>
 
-    <BaseCard title="Selected charts"
+    <BaseCard title="Grafice selectate"
       ><template #actions>
         <router-link :to="{ name: 'charts-view' }" class="button is-primary">
-          See all
+          Vezi toate
         </router-link>
       </template>
 
       <BaseTable :data="user.dashboard.charts" :fields="fields.charts" />
     </BaseCard>
 
-    <BaseCard title="Selected views"
+    <BaseCard title="Date procesate selectate"
       ><template #actions>
         <router-link :to="{ name: 'filter-view' }" class="button is-primary">
-          See all
+          Vezi toate
         </router-link>
       </template>
 
@@ -56,21 +56,21 @@ export default {
             name: 'name',
             component: 'FieldRouterLink',
             props: { route: 'chart-view', param: 'idChart' },
-            display_name: 'Chart name'
+            display_name: 'Nume grafic'
           },
           {
             name: 'creation_date',
             field_type: 'date',
-            display_name: 'Creation date'
+            display_name: 'Creat la'
           },
           {
             name: 'table',
-            display_name: 'Table',
+            display_name: 'Date de intrare',
             component: 'FieldTagList'
           },
           {
             name: 'owner.username',
-            display_name: 'Created by'
+            display_name: 'Creat de'
           },
           {
             name: 'actions',
@@ -86,21 +86,21 @@ export default {
             name: 'name',
             component: 'FieldRouterLink',
             props: { route: 'filter-table-view', param: 'idTable' },
-            display_name: 'View name'
+            display_name: 'Nume tabel'
           },
           {
             name: 'creation_date',
             field_type: 'date',
-            display_name: 'Creation date'
+            display_name: 'Creat la'
           },
           {
             name: 'tables',
-            display_name: 'Tables',
+            display_name: 'Date de intrare',
             component: 'FieldTagList'
           },
           {
             name: 'owner.username',
-            display_name: 'Created by'
+            display_name: 'Creat de'
           },
           {
             name: 'actions',

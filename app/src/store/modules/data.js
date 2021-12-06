@@ -126,7 +126,7 @@ export default {
     putTable({ dispatch }, { idTable, data }) {
       return TableService.putTable(idTable, data).then(() => {
         dispatch('getDatabase').then(
-          ToastService.open('The table has been updated')
+          ToastService.open('Tabelul a fost actualizat')
         )
       })
     },
@@ -134,7 +134,7 @@ export default {
     patchTable({ dispatch }, { idTable, data }) {
       return TableService.patchTable(idTable, data).then(() => {
         return dispatch('getDatabase').then(
-          ToastService.open('The table has been updated')
+          ToastService.open('Tabelul a fost actualizat')
         )
       })
     },
@@ -142,7 +142,7 @@ export default {
     postTable({ dispatch }, data) {
       return TableService.postTable(data).then(response => {
         dispatch('getDatabase').then(() => {
-          ToastService.open('Table was created successfuly.')
+          ToastService.open('Tabelul a fost creat cu success.')
         })
 
         return response
@@ -152,7 +152,7 @@ export default {
     deleteTable({ dispatch }, idTable) {
       return TableService.deleteTable(idTable).then(() => {
         dispatch('getDatabase').then(
-          ToastService.open('The table has been deleted')
+          ToastService.open('Tabelul a fost șters.')
         )
       })
     },
@@ -160,7 +160,7 @@ export default {
     deleteEntity({ dispatch }, { idTable, idEntity, query }) {
       return TableService.deleteEntity(idTable, idEntity).then(() => {
         dispatch('getTableEntries', { idTable, query }).then(() => {
-          ToastService.open('The entity has been deleted')
+          ToastService.open('Intrarea a fost ștearsă')
         })
       })
     },

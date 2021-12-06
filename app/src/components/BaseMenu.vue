@@ -24,14 +24,14 @@
       <b-menu-item
         tag="router-link"
         icon="dns-outline"
-        label="Manage database"
+        label="Administrare tabele"
         :to="{ name: 'database-view' }"
       />
 
       <b-menu-item
         tag="router-link"
         icon="tune"
-        label="Filtered views"
+        label="Date procesate"
         :to="{ name: 'filter-view' }"
       />
 
@@ -41,7 +41,7 @@
         @click="!menuActive && toggleMenu()"
       >
         <template #label="props">
-          <span>Data visualization</span>
+          <span>Vizualizare date</span>
           <b-icon
             class="menu-tick"
             :icon="props.expanded ? 'menu-up' : 'menu-down'"
@@ -49,12 +49,12 @@
         </template>
         <b-menu-item
           tag="router-link"
-          label="Charts"
+          label="Grafice"
           :to="{ name: 'charts-view' }"
         />
         <b-menu-item
           tag="router-link"
-          label="Cards"
+          label="Carduri"
           :to="{ name: 'cards-view' }"
         />
       </b-menu-item>
@@ -62,7 +62,7 @@
       <b-menu-item
         tag="router-link"
         icon="account-details-outline"
-        label="User management"
+        label="Utilizatori"
         v-if="isAdmin"
         :to="{ name: 'users-view' }"
       />
@@ -70,7 +70,7 @@
       <b-menu-item
         tag="router-link"
         icon="application-import"
-        label="Import data"
+        label="Actualizare date"
         :to="{ name: 'table-import', query: { manual: true } }"
       />
 

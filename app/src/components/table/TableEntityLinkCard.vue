@@ -23,9 +23,9 @@
             </VField>
           </div>
           <div class="column">
-            <VField label="Table" rules="required">
+            <VField label="Tabel" rules="required">
               <b-select
-                placeholder="Select a table"
+                placeholder="Selectează un tabel"
                 v-model="idTable"
                 @input="getTableFields"
                 expanded
@@ -44,11 +44,11 @@
           <div class="column">
             <VField
               label="Linked field"
-              labelInfo="Field types must match"
+              labelInfo="Tipurile de câmpuri trebuie sa fie identice"
               rules="required"
             >
               <b-select
-                placeholder="Select a field"
+                placeholder="Selectează un câmp"
                 v-model="linkField"
                 :loading="loading"
                 expanded

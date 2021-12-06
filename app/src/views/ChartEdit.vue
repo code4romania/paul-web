@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BaseTitle title="Chart edit" />
+    <BaseTitle title="Editează grafic" />
 
     <ValidationObserver
       v-slot="{ passes }"
@@ -8,15 +8,15 @@
       slim
       v-if="chartConfig"
     >
-      <BaseCard title="Configuration">
+      <BaseCard title="Configurare">
         <div class="card-container card-form">
           <div class="columns is-multiline">
             <div class="column is-6">
-              <VField label="Name" rules="required">
+              <VField label="Nume" rules="required">
                 <b-input v-model="chartConfig.name" />
               </VField>
 
-              <VField label="Select chart type" rules="required">
+              <VField label="Selectează tipul de grafic" rules="required">
                 <b-select expanded v-model="chartConfig.chart_type">
                   <option
                     v-for="(type, key) in chartTypes"
@@ -28,7 +28,7 @@
               </VField>
 
               <VField
-                label="Choose one of the sources of data you already have imported or configured in your account"
+                label="Alege o sursă de date pe care deja le-ai încărcat în platformă"
                 v-if="database"
                 rules="required"
               >
@@ -47,7 +47,7 @@
               </VField>
 
               <VField
-                label="Choose which data column you wish to display on the horizontal axis"
+                label="Alege ce date vrei să vezi pe axa orizontală"
                 v-if="table"
               >
                 <b-select expanded v-model="chartConfig.x_axis_field">
@@ -62,7 +62,7 @@
               </VField>
 
               <VField
-                label="Choose which data column you wish to group by on the horizontal axis"
+                label="Alege după ce date vrei să grupezi informația pe axa orizontală"
                 v-if="table"
               >
                 <b-select expanded v-model="chartConfig.x_axis_field_2">
@@ -77,7 +77,7 @@
               </VField>
 
               <VField
-                label="Choose which data column you wish to display on the vertical axis"
+                label="Alege ce date vrei să vezi pe axa verticală"
                 v-if="table"
               >
                 <b-select expanded v-model="chartConfig.y_axis_field">
@@ -91,7 +91,7 @@
                 </b-select>
               </VField>
 
-              <VField label="Vertical axis function" v-if="table">
+              <VField label="Care este funcția de calcul pentru axa verticală" v-if="table">
                 <b-select expanded v-model="chartConfig.y_axis_function">
                   <option
                     v-for="(func, key) in chartFunctions"
@@ -102,7 +102,7 @@
                 </b-select>
               </VField>
 
-              <VField label="Timeline field" v-if="table">
+              <VField label="Date temporale" v-if="table">
                 <b-select expanded v-model="chartConfig.timeline_field">
                   <option></option>
                   <option
@@ -117,7 +117,7 @@
               </VField>
 
               <VField
-                label="Timeline group type"
+                label="Selectează tipul de interval"
                 v-if="chartConfig.timeline_field"
               >
                 <b-select expanded v-model="chartConfig.timeline_period">
@@ -131,7 +131,7 @@
               </VField>
               <VField v-if="chartConfig.timeline_field">
                 <b-checkbox v-model="chartConfig.timeline_include_nulls">
-                  Include periods with no data
+                  Include perioade fără date
                 </b-checkbox>
               </VField>
             </div>
@@ -140,7 +140,7 @@
 
         <template #footer>
           <b-button class="is-primary" @click="passes(save)">
-            Save changes
+            Salvează modificările
           </b-button>
         </template>
       </BaseCard>

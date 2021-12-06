@@ -1,11 +1,11 @@
 <template>
   <div>
-    <BaseTitle title="Filtered views" :hasBackButton="false" />
+    <BaseTitle title="Date procesate" :hasBackButton="false" />
 
-    <BaseCard title="Views" v-if="tableViews"
+    <BaseCard title="Tabele procesate" v-if="tableViews"
       ><template #actions>
         <router-link :to="{ name: 'filter-edit' }" class="button is-primary">
-          Add new view
+          Adaugă tabel
         </router-link>
       </template>
 
@@ -41,25 +41,25 @@ export default {
             name: 'name',
             component: 'FieldRouterLink',
             props: { route: 'filter-table-view', param: 'idTable' },
-            display_name: 'View name'
+            display_name: 'Nume tabel'
           },
           {
             name: 'creation_date',
             field_type: 'date',
-            display_name: 'Creation date'
+            display_name: 'Creat la'
           },
           {
             name: 'tables',
-            display_name: 'Tables',
+            display_name: 'Date de intrare',
             component: 'FieldTagList'
           },
           {
             name: 'owner.username',
-            display_name: 'Created by'
+            display_name: 'Creat de'
           },
           {
             name: 'show_dashboard',
-            display_name: 'Show in dashboard',
+            display_name: 'Publică în dashboard',
             component: 'FieldCheckbox',
             centered: true,
             sortable: false,

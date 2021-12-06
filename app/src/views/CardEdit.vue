@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BaseTitle title="Card edit" />
+    <BaseTitle title="Editează card" />
 
     <ValidationObserver
       v-slot="{ passes }"
@@ -8,16 +8,16 @@
       slim
       v-if="cardConfig"
     >
-      <BaseCard title="Configuration">
+      <BaseCard title="Configurare">
         <div class="card-container card-form">
           <div class="columns is-multiline">
             <div class="column is-6">
-              <VField label="Name" rules="required">
+              <VField label="Nume" rules="required">
                 <b-input v-model="cardConfig.name" />
               </VField>
 
               <VField
-                label="Choose one of the sources of data you already have imported or configured in your account"
+                label="Alege o sursă de date pe care deja le-ai încărcat în platformă"
                 v-if="database"
                 rules="required"
               >
@@ -32,7 +32,7 @@
               </VField>
 
               <VField
-                label="Aggregation function"
+                label="Funcția de agregare"
                 rules="required"
                 v-if="table"
               >
@@ -47,7 +47,7 @@
               </VField>
 
               <VField
-                label="Choose data source column"
+                label="Alege sursa de date pe care vrei să le calculezi"
                 rules="required"
                 v-if="table && cardConfig.data_column_function != 'Count'"
               >
@@ -66,7 +66,7 @@
 
         <template #footer>
           <b-button class="is-primary" @click="passes(save)">
-            Save changes
+            Salvează modificările
           </b-button>
         </template>
       </BaseCard>

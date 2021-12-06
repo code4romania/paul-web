@@ -17,12 +17,12 @@
 
     <BaseCard :title="title">
       <template #title v-if="tableEntries">
-        <span class="entries">{{ tableEntries.count }} entries</span>
+        <span class="entries">{{ tableEntries.count }} intrări</span>
       </template>
       <template #actions>
         <div class="buttons">
           <b-button class="is-dark" @click="openModalColumns">
-            Change view
+            Schimbă tabel
           </b-button>
 
           <router-link
@@ -31,7 +31,7 @@
               name: filterMode ? 'filter-edit' : 'table-edit',
               params: { idTable }
             }"
-            v-text="filterMode ? 'Edit view' : 'Edit table'"
+            v-text="'Editează'"
           />
 
           <router-link
@@ -39,22 +39,22 @@
             class="button is-primary"
             :to="{ name: 'entity-edit', params: { idTable } }"
           >
-            Add new entity
+            Adaugă intrare nouă
           </router-link>
 
           <a :href="exportPath" class="button is-primary" target="_blank">
-            Export
+            Exportă
           </a>
         </div>
       </template>
 
       <template #default>
         <div class="card-container">
-          Last edit: {{ table.last_edit_date | parseDate }}
+          Ultima actualizare: {{ table.last_edit_date | parseDate }}
           <span
             v-if="table.last_edit_user"
             v-text="
-              `by ${table.last_edit_user.first_name} ${table.last_edit_user.last_name}`
+              `de ${table.last_edit_user.first_name} ${table.last_edit_user.last_name}`
             "
           />
         </div>
@@ -108,7 +108,7 @@ export default {
     }),
     title() {
       return (
-        (this.filterMode ? 'Filtered view' : 'Table') + ' – ' + this.table.name
+        (this.filterMode ? 'Date procesate' : 'Tabel') + ' – ' + this.table.name
       )
     },
     exportPath() {

@@ -2,10 +2,10 @@
   <div v-if="database">
     <BaseTitle title="Manage database" :hasBackButton="false" />
 
-    <BaseCard title="Active tables"
+    <BaseCard title="Tabele active"
       ><template #actions>
         <router-link :to="{ name: 'table-add' }" class="button is-primary">
-          Add new table
+          Adaugă tabel
         </router-link>
       </template>
 
@@ -15,7 +15,7 @@
       />
     </BaseCard>
 
-    <BaseCard title="Archived tables">
+    <BaseCard title="Tabele arhivate">
       <BaseTable
         :data="database.archived_tables"
         :fields="fields.archived_tables"
@@ -38,21 +38,21 @@ export default {
             name: 'name',
             component: 'FieldRouterLink',
             props: { route: 'table-view', param: 'idTable' },
-            display_name: 'Table name'
+            display_name: 'Nume tabel'
           },
           {
             name: 'last_edit_date',
             field_type: 'datetime',
-            display_name: 'Last edit'
+            display_name: 'Actualizat la'
           },
           {
             name: 'entries',
-            display_name: 'Entries',
+            display_name: 'Intrări',
             field_type: 'int'
           },
           {
             name: 'last_edit_user.username',
-            display_name: 'Last edit made by'
+            display_name: 'Actualizat de'
           },
           {
             name: 'actions',
@@ -68,20 +68,20 @@ export default {
             name: 'name',
             component: 'FieldRouterLink',
             props: { route: 'table-view', param: 'idTable' },
-            display_name: 'Table name'
+            display_name: 'Nume tabel'
           },
           {
             name: 'last_edit_date',
             field_type: 'datetime',
-            display_name: 'Archiving date'
+            display_name: 'Data arhivării'
           },
           {
             name: 'entries',
-            display_name: 'Entries'
+            display_name: 'Intrări'
           },
           {
             name: 'owner.username',
-            display_name: 'Archived by',
+            display_name: 'Arhivat de',
             component: 'FieldOwnerLink'
           },
           {

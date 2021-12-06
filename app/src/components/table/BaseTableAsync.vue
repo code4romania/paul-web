@@ -51,7 +51,7 @@
 
       <template slot="bottom-left" v-if="customPerPage">
         <div class="pagination-per-page">
-          Show
+          Listează
           <div class="control">
             <input
               class="input"
@@ -61,10 +61,10 @@
               @blur="onPerPageChange"
             />
           </div>
-          entries per page.
+          intrări pe pagină.
 
           <span>
-            Showing {{ (page - 1) * perPage + 1 }} to
+            Listare {{ (page - 1) * perPage + 1 }} din
             {{ Math.min(page * perPage, tableEntries.count) }}
           </span>
         </div>
@@ -72,7 +72,7 @@
         <div class="pagination-jump" v-if="tableEntries.count / perPage > 4">
           <div class="control">
             <input
-              placeholder="Jump to page"
+              placeholder="Mergi la pagina"
               class="input"
               type="number"
               @keyup.enter="$event.target.blur()"

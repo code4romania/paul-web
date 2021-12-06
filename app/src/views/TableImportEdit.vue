@@ -1,19 +1,13 @@
 <template>
   <div v-if="table">
-    <BaseTitle :title="`Import data into ${table.name}`" />
+    <BaseTitle :title="`Actualizare date în ${table.name}`" />
 
     <ValidationObserver v-slot="{ passes }" @submit.prevent slim>
-      <BaseCard title="Match data columns between tables" v-bind="{ loading }">
+      <BaseCard title="Selectează corespondența între coloane" v-bind="{ loading }">
         <template #title>
           <div class="info">
             <div>
-              In order to import the data to an existing table, you have to
-              match the columns in the file you are importing to the columns in
-              the existing table. This matching will allow the platform to
-              understand and transfer the data in the right columns, to prevent
-              errors. <br />
-              We will set the default column correlation based on the import
-              file used to create the table.
+              Pentru a putea importa date noi într-un tabel existent trebuie să indici care este corespondenta dintre coloanele din tabelul existent și cel nou. Această operațiune va ajuta platforma să încarce corect datele pentru a preveni orice eroare.
             </div>
           </div>
         </template>
@@ -23,12 +17,10 @@
             <br />
             <div class="columns is-size-6">
               <div class="column is-6">
-                The columns below are extracted from the table you want to
-                import.
+                 Coloanele de mai jos sunt extrase din tabelul pe care vrei să îl imporți.
               </div>
               <div class="column is-6">
-                Select the corresponding destination column from the existing
-                table.
+                Alege coloanele corespondente din tabelul existent in platformă.
               </div>
             </div>
 
@@ -38,14 +30,14 @@
               :key="`cname-${index}`"
             >
               <div class="column is-6">
-                <VField :label="`Column #${index + 1}`" rules="required">
+                <VField :label="`Coloana #${index + 1}`" rules="required">
                   <b-input :value="field.original_name" readonly />
                 </VField>
               </div>
               <div class="column is-6">
                 <VField
                   :label="
-                    `Column #${index + 1} ${getFieldType(
+                    `Coloana #${index + 1} ${getFieldType(
                       getTableField(field.table_field).field_type
                     )}`
                   "
@@ -64,13 +56,13 @@
                   <b-button class="is-white" :disabled="fields.length == 1">
                     <ActionButtonDelete
                       :dialogTitle="
-                        `Delete column ${
+                        `Șterge coloana ${
                           field.display_name != null
                             ? JSON.stringify(field.display_name)
                             : ''
                         }`
                       "
-                      dialogMessage="Are you sure?"
+                      dialogMessage="Ești sigur?"
                       :bypassDialog="!field.original_name.length"
                       @on-confirm="deleteColumn(index)"
                   /></b-button>
@@ -78,7 +70,7 @@
 
                 <VField
                   v-if="isFormatted(field.table_field)"
-                  :label="`Column format #${index + 1}`"
+                  :label="`Formatul coloanei #${index + 1}`"
                   rules="required"
                 >
                   <VDateformat v-model="field.field_format" />
@@ -90,7 +82,7 @@
 
         <template #footer>
           <b-button class="is-primary" @click="passes(submit)">
-            Continue
+            Continuă
           </b-button>
         </template>
       </BaseCard>

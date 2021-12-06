@@ -1,15 +1,15 @@
 <template>
   <div>
-    <BaseTitle title="Import data" :hasBackButton="!isManualImport" />
+    <BaseTitle title="Actualizare date" :hasBackButton="!isManualImport" />
 
     <ValidationObserver v-slot="{ passes }" @submit.prevent slim>
       <BaseCard v-bind="{ title, loading }">
         <div class="card-container">
           <div class="columns">
             <div class="column is-5" v-if="isManualImport && database">
-              <VField label="Import to table" rules="required">
+              <VField label="Tabelul în care dorești să imporți" rules="required">
                 <b-select
-                  placeholder="Select a table"
+                  placeholder="Alege un tabel"
                   v-model="idTable"
                   expanded
                 >
@@ -25,24 +25,24 @@
           </div>
           <div class="columns">
             <div class="column is-narrow">
-              <VField label="Select file type" rules="required">
+              <VField label="Alege tipul de fișier" rules="required">
                 <VSelect :choices="['csv']" v-model="filetype" />
               </VField>
             </div>
             <div class="column is-2">
               <VField
-                label="Delimiter"
-                labelInfo="Leave empty for autodetection."
+                label="Delimitator"
+                labelInfo="Lasă liber pentru autocompletare."
               >
                 <b-input v-model="delimiter" />
               </VField>
             </div>
             <div class="column is-7">
-              <VField label="File selection" rules="required">
+              <VField label="Alege fisier" rules="required">
                 <div class="file is-right is-dark is-fullwidth">
                   <b-upload v-model="file" expanded>
                     <span class="file-cta">
-                      <span class="file-label">Browse</span>
+                      <span class="file-label">Caută</span>
                     </span>
                     <span class="file-name">
                       <span v-if="file">{{ file.name }}</span>
@@ -56,7 +56,7 @@
 
         <template #footer>
           <b-button type="is-primary" @click="passes(submit)"
-            >Continue</b-button
+            >Continuă</b-button
           >
         </template>
       </BaseCard>
@@ -97,7 +97,7 @@ export default {
             this.loading = false
           })
         }
-        this.title = 'Import data to existing table'
+        this.title = 'Încarcă date într-un tabel existent'
       } else {
         this.title = `Import data and create table ${JSON.stringify(
           this.$route.query.name

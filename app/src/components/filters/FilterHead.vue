@@ -1,17 +1,17 @@
 <template>
   <div v-if="table">
-    <BaseCard title="Filtering">
+    <BaseCard title="Filtrare">
       <template #actions>
         <div class="buttons">
           <b-button class="is-light" @click="resetFilters">
-            Reset filters
+            Resetează filtre
           </b-button>
           <b-button class="is-dark" @click="openModalFilters">
-            {{ filtersNotEmpty ? 'Edit filters' : 'Add filters' }}
+            {{ filtersNotEmpty ? 'Editează filtre' : 'Adaugă filtre' }}
           </b-button>
 
           <template v-if="filterMode">
-            <b-button class="is-primary" @click="saveFilters">Save</b-button>
+            <b-button class="is-primary" @click="saveFilters">Salvează</b-button>
           </template>
         </div>
       </template>
