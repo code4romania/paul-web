@@ -3,11 +3,17 @@
     <BaseTitle :title="`Actualizare date în ${table.name}`" />
 
     <ValidationObserver v-slot="{ passes }" @submit.prevent slim>
-      <BaseCard title="Selectează corespondența între coloane" v-bind="{ loading }">
+      <BaseCard
+        title="Selectează corespondența între coloane"
+        v-bind="{ loading }"
+      >
         <template #title>
           <div class="info">
             <div>
-              Pentru a putea importa date noi într-un tabel existent trebuie să indici care este corespondenta dintre coloanele din tabelul existent și cel nou. Această operațiune va ajuta platforma să încarce corect datele pentru a preveni orice eroare.
+              Pentru a putea importa date noi într-un tabel existent trebuie să
+              indici care este corespondenta dintre coloanele din tabelul
+              existent și cel nou. Această operațiune va ajuta platforma să
+              încarce corect datele pentru a preveni orice eroare.
             </div>
           </div>
         </template>
@@ -17,7 +23,8 @@
             <br />
             <div class="columns is-size-6">
               <div class="column is-6">
-                 Coloanele de mai jos sunt extrase din tabelul pe care vrei să îl imporți.
+                Coloanele de mai jos sunt extrase din tabelul pe care vrei să îl
+                imporți.
               </div>
               <div class="column is-6">
                 Alege coloanele corespondente din tabelul existent in platformă.
@@ -51,7 +58,8 @@
                       :value="tfield.id"
                       v-text="tfield.display_name"
                     />
-                  </b-select> <br>
+                  </b-select>
+                  <br />
 
                   <b-button class="is-white" :disabled="fields.length == 1">
                     <ActionButtonDelete
@@ -66,18 +74,16 @@
                       :bypassDialog="!field.original_name.length"
                       @on-confirm="deleteColumn(index)"
                   /></b-button>
-                  <br>
+                  <br />
                 </VField>
-                <VField>
-                  <b-checkbox :value="field.unique" >
+                <div class="checkbox-list">
+                  <b-checkbox v-model="field.unique">
                     Valoare unică
                   </b-checkbox>
-                </VField>
-                <VField>
-                  <b-checkbox :value="field.required" >
+                  <b-checkbox v-model="field.required">
                     Valoare obligatorie
                   </b-checkbox>
-                </VField>
+                </div>
 
                 <VField
                   v-if="isFormatted(field.table_field)"
