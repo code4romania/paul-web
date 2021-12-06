@@ -24,11 +24,11 @@
             </div>
           </div>
           <div class="columns">
-            <div class="column is-narrow">
+            <!-- <div class="column is-narrow">
               <VField label="Alege tipul de fișier" rules="required">
                 <VSelect :choices="['csv']" v-model="filetype" />
               </VField>
-            </div>
+            </div> -->
             <div class="column is-2">
               <VField
                 label="Delimitator"
@@ -99,7 +99,7 @@ export default {
         }
         this.title = 'Încarcă date într-un tabel existent'
       } else {
-        this.title = `Import data and create table ${JSON.stringify(
+        this.title = `Importă date și crează tabelul ${JSON.stringify(
           this.$route.query.name
         )}`
       }
