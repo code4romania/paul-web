@@ -74,6 +74,31 @@
         :to="{ name: 'table-import', query: { manual: true } }"
       />
 
+      <!-- <b-menu-item
+        icon="cog-outline"
+        :active="isActive.plugins"
+        @click="!menuActive && toggleMenu()"
+      >
+        <template #label="props">
+          <span>Plugins</span>
+          <b-icon
+            class="menu-tick"
+            :icon="props.expanded ? 'menu-up' : 'menu-down'"
+          ></b-icon>
+        </template>
+        <b-menu-item
+          tag="router-link"
+          label="Mailchimp"
+          :to="{ name: 'plugin-view', params: { plugin: 'mailchimp' } }"
+        />
+
+        <b-menu-item
+          tag="router-link"
+          label="Woocommerce"
+          :to="{ name: 'plugin-view', params: { plugin: 'woocommerce' } }"
+        />
+      </b-menu-item> -->
+
       <b-menu-item tag="a" icon="school" label="Tutoriale" disabled />
     </b-menu-list>
   </b-menu>
