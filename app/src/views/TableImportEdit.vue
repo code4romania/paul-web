@@ -51,7 +51,7 @@
                       :value="tfield.id"
                       v-text="tfield.display_name"
                     />
-                  </b-select>
+                  </b-select> <br>
 
                   <b-button class="is-white" :disabled="fields.length == 1">
                     <ActionButtonDelete
@@ -66,6 +66,17 @@
                       :bypassDialog="!field.original_name.length"
                       @on-confirm="deleteColumn(index)"
                   /></b-button>
+                  <br>
+                </VField>
+                <VField>
+                  <b-checkbox :value="field.unique" >
+                    Valoare unică
+                  </b-checkbox>
+                </VField>
+                <VField>
+                  <b-checkbox :value="field.required" >
+                    Valoare obligatorie
+                  </b-checkbox>
                 </VField>
 
                 <VField
@@ -144,7 +155,7 @@ export default {
     },
     submit() {
       this.loading = true
-
+      console.log(this.fields)
       this.$store
         .dispatch('data/manualImport', {
           idTable: this.idTable,
