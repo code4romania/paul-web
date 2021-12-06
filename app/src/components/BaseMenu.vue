@@ -80,7 +80,7 @@
         @click="!menuActive && toggleMenu()"
       >
         <template #label="props">
-          <span>Plugins</span>
+          <span>Integrări</span>
           <b-icon
             class="menu-tick"
             :icon="props.expanded ? 'menu-up' : 'menu-down'"
