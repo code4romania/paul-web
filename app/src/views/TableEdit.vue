@@ -72,7 +72,14 @@
                         @on-confirm="deleteColumn(index)"
                     /></b-button>
                   </VField>
-
+                  <div class="checkbox-list">
+                  <b-checkbox v-model="field.unique">
+                    Valoare unică
+                  </b-checkbox>
+                  <b-checkbox v-model="field.required">
+                    Valoare obligatorie
+                  </b-checkbox>
+                </div>
                   <VField
                     v-if="idImport && field.field_type == 'date'"
                     :label="`Column format #${index + 1}`"

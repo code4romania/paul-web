@@ -8,7 +8,7 @@
       slim
       v-if="table && entity"
     >
-      <BaseCard :title="`Table – ${table.name}: ${pageTitle}`">
+      <BaseCard :title="`Tabel – ${table.name}: ${pageTitle}`">
         <div class="card-container card-form">
           <div class="columns is-multiline">
             <div
@@ -16,7 +16,7 @@
               :key="`field-${field.id}`"
               class="column is-6"
             >
-              <VField :label="field.display_name">
+              <VField :label="field.display_name" required="true">
                 <component
                   :is="getComponent(field.field_type)"
                   v-model="entity[field.name]"
@@ -29,7 +29,7 @@
 
         <template #footer>
           <b-button class="is-primary" @click="passes(save)">
-            Save changes
+            Salvează modificările
           </b-button>
         </template>
       </BaseCard>
@@ -59,7 +59,7 @@ export default {
       }
     }),
     pageTitle() {
-      return this.$route.params.idEntity ? 'Edit entity' : 'Add new entity'
+      return this.$route.params.idEntity ? 'Editează intrarea' : 'Adaugă intrare nouă'
     }
   },
   mounted() {

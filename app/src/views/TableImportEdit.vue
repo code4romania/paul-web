@@ -161,7 +161,6 @@ export default {
     },
     submit() {
       this.loading = true
-      console.log(this.fields)
       this.$store
         .dispatch('data/manualImport', {
           idTable: this.idTable,

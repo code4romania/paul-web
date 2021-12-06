@@ -1,32 +1,33 @@
 <template>
   <div>
-    <BaseTitle title="Table import result" :hasBackButton="false" />
+    <BaseTitle title="Rezultate import tabel" :hasBackButton="false" />
 
     <template v-if="importData">
       <BaseCard
         :title="
-          `Table ${name && JSON.stringify(name)} has been ${
-            name ? 'created' : 'updated'
+          `Tabelul ${name && JSON.stringify(name)} a fost ${
+            name ? 'creat' : 'actualizat'
           }`
         "
       >
-        <template #actions v-if="importData.imports_count" class="da">
+        <template #actions v-if="importData.import_count_created||importData.import_count_updated" class="da">
           <router-link
             class="button is-dark"
             :to="{ name: 'table-view', params: { idTable: importData.table } }"
-            >View table</router-link
+            >Vezi tabel</router-link
           >
         </template>
 
         <div class="card-container">
-          {{ importData.imports_count }} rows have been imported successfully!
+          {{ importData.import_count_created }} intrări au fost create <br>
+          {{ importData.import_count_updated }} intrări au fost actualizate
         </div>
       </BaseCard>
 
       <BaseCard v-if="importData.errors_count">
         <template #title>
           <span class="has-text-danger"
-            >{{ importData.errors_count }} rows have errors</span
+            >{{ importData.errors_count }} intrări au eroare</span
           >
         </template>
         <template #default>
@@ -44,7 +45,17 @@
                     'has-text-danger is-bold':
                       props.row.errors[field.original_name]
                   }"
-                  >{{ props.row.row[field.original_name] }}</span
+                  >
+                    {{ props.row.row[field.original_name] }}
+                    <b-tooltip
+                      v-if="props.row.errors[field.original_name]"
+                      type="is-dark"
+                      :label="props.row.errors[field.original_name]"
+                      multilined
+                    >
+                      <b-icon icon="help-circle-outline" class="is-size-5"></b-icon>
+                    </b-tooltip>
+                  </span
                 ></template
               >
             </b-table-column>
@@ -53,7 +64,7 @@
 
         <template #actions>
           <a class="button is-primary" target="_blank" :href="exportPath()"
-            >Download these fields</a
+            >Descarcă aceste intrări</a
           >
         </template>
       </BaseCard>
