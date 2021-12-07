@@ -7,7 +7,7 @@ import {
   confirmed
 } from 'vee-validate/dist/rules'
 
-import en from './locale/en.json'
+import ro from './locale/ro.json'
 
 const rules = { required, email, length, confirmed }
 
@@ -30,6 +30,6 @@ extend('over', {
   params: ['length']
 })
 
-localize('en', en)
+localize('ro', ro)
 // setInteractionMode('lazy')
 setInteractionMode('eager')

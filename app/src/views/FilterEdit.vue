@@ -3,27 +3,25 @@
     <BaseTitle :title="title" />
 
     <ValidationObserver v-slot="{ passes }" @submit.prevent slim>
-      <BaseCard title="Configure view">
+      <BaseCard title=" Configurează tabelul">
         <div class="card-container">
           <div class="columns">
             <div class="column is-6">
               <VField
                 label="
-                  Select if you want to create a filtered view based on data
-                  from a single table or you need to link two tables to create a
-                  view based on data from multiple tables."
+                   Selectează dacă vrei să creezi un tabel cu date filtrate dintr-o singură sursă (un tabel deja existent) sau din mai multe surse (două tabele deja existente) simultan."
                 rules="required"
               >
                 <b-select v-model.number="type" expanded>
-                  <option value="0">Single view</option>
-                  <option value="1">Joined tables view</option>
+                  <option value="0">O singură sursă</option>
+                  <option value="1">Mai multe surse</option>
                 </b-select>
               </VField>
             </div>
           </div>
           <div class="columns">
             <div class="column is-6">
-              <VField label="View name" rules="required">
+              <VField label="Denumire tabel nou" rules="required">
                 <b-input v-model="name" />
               </VField>
             </div>
@@ -37,7 +35,7 @@
           <div class="columns is-multiline">
             <div class="column is-6">
               <VField
-                label="Select a table"
+                label=" Selectează sursa"
                 rules="required"
                 :name="`Table #${link_index + 1} name`"
                 :key="`field-table-${link_index}`"
@@ -59,11 +57,11 @@
             </div>
             <div class="column is-4" v-if="type">
               <VField
-                label="Link field"
+                label="Câmpul de legătură"
                 rules="required"
                 :key="`field-link-${link_index}`"
                 :name="`Table #${link_index + 1} link `"
-                labelInfo="Please select the column that links the two tables. In order to join information about the same entries in both tables you need to set an identifier present in both. Ex. E-mail. The two link fields must match."
+                labelInfo="Selectează coloana după care vrei să faci legătura între cele două tabele. Pentru a uni date din două tabele trebuie să selectezi care este identificatorul (câmpul de legătură între ele) Ex: E-mail. Cele două Câmpuri de legătură selectate trebuie să fie identice."
               >
                 <b-select
                   v-model="link.join_field"
@@ -87,7 +85,7 @@
             <div class="column is-12" v-if="table[link.table]">
               <VField
                 :name="`Table #${link_index + 1} columns `"
-                label="Select which columns you want to keep in the table you are currently building:"
+                label="Selectează ce coloane vrei sa păstrezi în tabelul pe care îl construiești:"
                 rules="required"
               >
                 <div class="checkbox-list is-1">

@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1 class="title is-1">Register account</h1>
+    <h1 class="title is-1">Creează cont</h1>
 
     <template v-if="$route.query.confirmation == null">
       <div class="subtitle">
-        Enter your credentials
+        Introdu un email și setează o parolă
       </div>
 
       <div class="form">
@@ -13,11 +13,11 @@
             <b-input v-model="username" />
           </VField>
 
-          <VField label="Password" rules="required" name="password">
+          <VField label="Parola" rules="required" name="password">
             <b-input v-model="password" type="password" />
           </VField>
 
-          <VField label="Repeat password" rules="required|confirmed:password">
+          <VField label="Confirmă parola" rules="required|confirmed:password">
             <b-input v-model="re_password" type="password" />
           </VField>
 
@@ -26,7 +26,7 @@
             class="button-submit is-primary"
             @click="passes(submit)"
           >
-            Submit
+            Creează cont
           </b-button>
         </ValidationObserver>
       </div>
@@ -34,8 +34,9 @@
 
     <div class="has-text-centered" v-else>
       <div class="subtitle">
-        You will receive an e-mail containing an activation link. <br />
-        If you can't find it, please check your spam folder or try to resend it.
+        Vei primi un email cu un link de activare. <br>
+        Dacă nu îl găsești, te rugăm sa verifici și în directorul "spam".
+
       </div>
       <br />
       <br />

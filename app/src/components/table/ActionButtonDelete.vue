@@ -23,7 +23,8 @@ export default {
           onConfirm: () => {
             this.$emit('on-confirm')
           },
-          confirmText: 'Delete'
+          confirmText: 'Șterge',
+          cancelText: 'Anulează'
         })
     }
   }

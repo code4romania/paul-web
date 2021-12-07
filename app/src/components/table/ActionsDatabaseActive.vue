@@ -17,8 +17,8 @@
     
     <ActionButtonDelete
       v-if="props.user_permissions.indexOf('delete_table') != -1"
-      dialogTitle="Do you wish to delete this table?"
-      dialogMessage="This operation permanently removes all the entries of this table. Please check the data before proceeding."
+      dialogTitle="Ești sigur că vrei să ștergi acest tabel?"
+      dialogMessage="Această operațiune va șterge permanent toate informațiile din acest tabel. Verifică informațiile înainte de a merge mai departe."
       @on-confirm="$store.dispatch('data/deleteTable', props.id)"
     />
   </div>

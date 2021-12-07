@@ -21,7 +21,7 @@
         <div class="card-container">
           <div class="columns">
             <div class="column is-4">
-              <VField label="Table name">
+              <VField label="Nume tabel">
                 <b-input v-model="name" />
               </VField>
             </div>
@@ -32,7 +32,7 @@
                 :key="`cname-${index}`"
               >
                 <div class="column is-7">
-                  <VField :label="`Column name #${index + 1}`" rules="required">
+                  <VField :label="`Nume coloană #${index + 1}`" rules="required">
                     <div class="field-container">
                       <b-input v-model="field.display_name" placeholder="" />
                     </div>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="column is-5">
                   <VField
-                    :label="`Column type #${index + 1}`"
+                    :label="`Tip coloană #${index + 1}`"
                     rules="required"
                     grouped
                   >
@@ -61,7 +61,7 @@
                     <b-button class="is-white" :disabled="fields.length == 1">
                       <ActionButtonDelete
                         :dialogTitle="
-                          `Delete column ${
+                          `Șterge coloană ${
                             field.display_name != null
                               ? JSON.stringify(field.display_name)
                               : ''
@@ -94,7 +94,7 @@
                 <div class="column is-7">
                   <br />
                   <b-button class="is-dark" @click="addColumn" expanded
-                    >Add another column</b-button
+                    >Adaugă o coloană nouă</b-button
                   >
                 </div>
               </div>
@@ -140,8 +140,8 @@ export default {
     }),
     title() {
       return this.idTable && !this.idImport
-        ? `Edit table — ${this.table.name}`
-        : `Build table`
+        ? `Editează tabel — ${this.table.name}`
+        : `Construiește un tabel`
     }
   },
   mounted() {

@@ -10,12 +10,12 @@
       <div class="navbar-menu">
         <div class="navbar-end">
           <router-link :to="{ name: 'forgot-password' }" class="navbar-item"
-            >Forgot password?</router-link
+            >Ai uitat parola?</router-link
           >
 
           <div class="navbar-item">
             <router-link :to="{ name: 'login' }" class="button is-primary"
-              >Log in</router-link
+              >Autentifică-te</router-link
             >
           </div>
         </div>

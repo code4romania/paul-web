@@ -16,10 +16,10 @@ const FieldFilterComponentMap = {
 }
 
 const FieldTypes = {
-  enum: 'Enumeration (Set of predefined values)',
-  date: 'Date',
-  int: 'Integer (whole number)',
-  float: 'Float (decimal number)',
+  enum: 'Enumerare (Set de opțiuni predefinite)',
+  date: 'Dată',
+  int: 'Număr întreg',
+  float: 'Număr cu zecimale',
   // bool: 'Yes/No',
   text: 'Text'
 }

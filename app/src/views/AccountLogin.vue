@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1 class="title is-1">Log in</h1>
+    <h1 class="title is-1">Autentifică-te</h1>
 
     <div class="subtitle">
-      Enter your login credentials
+      Introdu credențialele mai jos
     </div>
 
     <div class="form">
@@ -12,7 +12,7 @@
           <b-input v-model="username" />
         </VField>
 
-        <VField label="Password" rules="required">
+        <VField label="Parola" rules="required">
           <b-input v-model="password" type="password" />
         </VField>
         
@@ -22,14 +22,14 @@
             class="button-submit is-primary"
             @click="passes(submit)"
           >
-            Log In
+            Autentificare
           </b-button>
         </div>
 
         <div class="field">
-          Not registered yet?
+          Nu ai cont?
           <router-link :to="{ name: 'register' }"
-            >Create an account</router-link
+            >Creează un cont</router-link
           >
         </div>
       </ValidationObserver>

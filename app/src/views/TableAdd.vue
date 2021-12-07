@@ -3,7 +3,7 @@
     <BaseTitle title="Add table" />
 
     <ValidationObserver v-slot="{ passes }" @submit.prevent slim>
-      <BaseCard title="Create a new table">
+      <BaseCard title="Crează un nou tabel">
         <div class="card-container">
           <div class="columns">
             <div class="column is-6">
@@ -13,17 +13,17 @@
             </div>
             <div class="column is-6">
               <VField
-                label="How would you like to create the new table?"
+                label="Cum dorești să creezi noul tabel?"
                 name="Table creation type"
                 rules="required"
                 class="radio-list"
               >
                 <b-radio v-model="type" native-value="table-import">
-                  Import from file
+                  Importă fișier CSV
                 </b-radio>
 
                 <b-radio v-model="type" native-value="table-edit">
-                  Create in the platform
+                  Crează în platformă
                 </b-radio>
               </VField>
             </div>
