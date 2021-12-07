@@ -2,10 +2,9 @@
   <div style="background: white; font-size: 12px; padding: 6px 0; color: black">
     <div class="container is-fluid">
       <div>
-        <img
-          src="/img/code4romania.svg"
+        <Logo
+          src="code4romania"
           width="102"
-          alt=""
           style="vertical-align: middle; margin-right: 20px"
         />
         <span
@@ -32,3 +31,14 @@
     </div>
   </div>
 </template>
+
+<script>
+import Logo from '@/components/Logo'
+
+export default {
+  name: 'Banner',
+  components: {
+    Logo
+  }
+}
+</script>
