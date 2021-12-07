@@ -3,7 +3,7 @@
     <nav class="navbar">
       <div class="navbar-brand">
         <router-link to="/" class="navbar-item">
-          <h2>PAUL</h2>
+          <Logo src="logo-default" width="80px" class="navbar-logo"/>
         </router-link>
       </div>
 
@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import Logo from '@/components/Logo.vue'
+
 export default {
   name: 'AccountBase',
   data() {
@@ -36,6 +38,9 @@ export default {
       username: '',
       password: ''
     }
+  },
+  components: {
+    Logo
   },
   mounted() {
     document.body.classList.add('account-view')
