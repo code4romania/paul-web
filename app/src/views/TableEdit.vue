@@ -72,6 +72,17 @@
                         @on-confirm="deleteColumn(index)"
                     /></b-button>
                   </VField>
+                  <div class="enum-values" v-if="field.field_type=='enum'">
+                    Adaugă valorile separate de virgulă
+                    <b-taginput
+                        v-model="field.choices"
+                        ellipsis
+                        icon="label"
+                        placeholder="valoare nouă"
+                        aria-close-label="Șterge">
+                    </b-taginput>
+                    
+                  </div>
                   <div class="checkbox-list">
                   <b-checkbox v-model="field.unique">
                     Valoare unică

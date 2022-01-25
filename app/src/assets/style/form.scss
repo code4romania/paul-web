@@ -82,6 +82,16 @@
   }
 }
 
+
+.enum-values {
+  font-size: $size-6;
+  color: $grey-darker;
+  margin-bottom: 12px;
+
+  .taginput {
+    margin-top: 5px;
+  }
+}
 .radio-list {
   .label {
     margin-bottom: 12px;
