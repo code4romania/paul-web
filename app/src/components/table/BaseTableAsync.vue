@@ -115,6 +115,7 @@ import getNestedObj from 'lodash.get'
 import { mapState } from 'vuex'
 
 const maximumPerPage = 100
+const tableStickyHeaderHeight = 400
 
 export default {
   components: {
@@ -228,7 +229,10 @@ export default {
           const top =
             window.pageYOffset + $tableWrapper.getBoundingClientRect().top
           // TODO: Find where 120px is coming from
-          const height = window.innerHeight - top - 120
+          const height = Math.max(
+            window.innerHeight - top - 120,
+            tableStickyHeaderHeight
+          )
           $tableWrapper.setAttribute('style', `height: ${height}px`)
         }, 500)
     },
